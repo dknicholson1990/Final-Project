@@ -11,5 +11,5 @@ https://github.com/dknicholson1990/Final-Project/tree/main/BLUE%20TEAM
 Assess vulnerable VMs and verify that the rules work as expected.
 https://github.com/dknicholson1990/Final-Project/tree/main/RED%20TEAM
 Use Wireshark to analyze live malicious traffic on the wire. Analyze the data from a packet sniff to find pertinate information about target and host.
-
+https://github.com/dknicholson1990/Final-Project/tree/main/Network%20analysis
 Read through the Red Team, Blue Team and Network Analysis files to the see the work, process and findings that lead up to creation of the final presetation.
